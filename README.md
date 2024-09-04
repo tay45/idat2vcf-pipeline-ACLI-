@@ -1,19 +1,19 @@
 # idat2vcf (ACLI)
 
-##Overview
+## Overview
 
 This project automates the process of converting Illumina microarray .idat files to .vcf files using the array-analysis-cli tool. Additionally, it updates the gt_sample_summary.csv file with relevant information from a sample sheet automatically.
 
-##Features:
+## Features:
 
     1. Selects manifest, cluster, and genome reference files for the analysis.
     2. Processes folders containing .idat files to generate genotype calls and convert .gtc files to .vcf.
     3. Updates gt_sample_summary.csv for each folder using the update_gt_sample_summary.py script.
     4. Runs all steps automatically for multiple folders.
 
-##Installation
+## Installation
 
-###Requirements
+### Requirements
 
     1. Python 3.9+
     2. pandas
@@ -28,7 +28,7 @@ This project automates the process of converting Illumina microarray .idat files
     
       Ensure that the array-analysis-cli (ACLI) is installed and accessible in your $PATH environment variable.
 
-##Usage
+## Usage
 
     1. Place your manifest (.bpm, .csv, .egt) files and genome reference (.fa) file in the appropriate directories within your base directory.
     2. Add your .idat files to the respective subdirectories corresponding to sample IDs.
@@ -47,26 +47,26 @@ This project automates the process of converting Illumina microarray .idat files
 
     3. Update the paths in the script as needed for your environment.
 
-##Running the Script
+## Running the Script
 
 To run the script, simply execute it with Python:
 python3 your_script_name.py
 
-##The script will:
+## The script will:
 
     1. Automatically select the appropriate manifest, cluster, and reference genome files.
     2. Run genotype calling using array-analysis-cli.
     3. Convert the generated .gtc files into .vcf.
     4. Automatically update the gt_sample_summary.csv file using update_gt_sample_summary.py.
 
-##Output
+## Output
 
     1. .vcf files will be generated in the respective output subdirectories.
     2. The gt_sample_summary.csv will be updated with relevant sample information from the sample sheet for each folder.
 
-##Script Breakdown
+## Script Breakdown
 
-###Main Script (your_script_name.py)
+### Main Script (your_script_name.py)
 
 The main script handles the process of running genotype calling, converting .gtc files to .vcf, and updating the gt_sample_summary.csv. The key steps are:
 
@@ -75,6 +75,6 @@ The main script handles the process of running genotype calling, converting .gtc
     3. GTC to VCF Conversion: Converts the .gtc files to .vcf format using the manifest and genome reference files.
     4. Updating the CSV: After processing each folder, the update_gt_sample_summary.py script is run to append new sample information to the summary CSV.
 
-###Helper Script (update_gt_sample_summary.py)
+### Helper Script (update_gt_sample_summary.py)
 
 This script updates the gt_sample_summary.csv by reading relevant information from the sample sheet corresponding to each folder. It appends the sample information to the existing summary CSV for a complete record.
