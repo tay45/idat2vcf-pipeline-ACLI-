@@ -66,7 +66,7 @@ python3 your_script_name.py
 
 ## Script Breakdown
 
-### Main Script (your_script_name.py)
+### Main Script (run_idat2vcf_acli.py)
 
 The main script handles the process of running genotype calling, converting .gtc files to .vcf, and updating the gt_sample_summary.csv. The key steps are:
 
@@ -78,3 +78,7 @@ The main script handles the process of running genotype calling, converting .gtc
 ### Helper Script (update_gt_sample_summary.py)
 
 This script updates the gt_sample_summary.csv by reading relevant information from the sample sheet corresponding to each folder. It appends the sample information to the existing summary CSV for a complete record.
+
+### Shell script (run_idat2vcf_acli.sh)
+
+This script is the shell script version of run_idat2vcf_acli.py. It should be run sequentially with update_gt_sample_summary.py
